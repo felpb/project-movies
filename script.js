@@ -19,8 +19,9 @@ moviesList.map((card, posicao) => {
         <div class="card-body">
           <h5 class="card-title">${card.name}</h5>
           <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary" onclick="openCard(${posicao})">Go somewhere</a>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <a href="#" class="btn btn-primary" onclick="openCard(${posicao})">Abrir</a>
+          <a href="#" class="btn btn-primary" onclick="editCard(${posicao})">Editar</a>
+          <a href="#" class="btn btn-primary">Deletar</a>
         </div>
       </div>
     </div>
@@ -36,3 +37,13 @@ function openCard(posicao) {
 
   new bootstrap.Modal('#openCard').show();
 }
+
+function editCard(posicao) {
+  let selectCard = moviesList[posicao];
+
+  let teste = document.querySelector('#editTitle')
+  console.log(teste)
+  new bootstrap.Modal('#editCard').show();
+}
+
+editCard(1)
