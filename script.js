@@ -42,8 +42,12 @@ function editCard(posicao) {
   let selectCard = moviesList[posicao];
 
   let teste = document.querySelector('#editTitle')
-  console.log(teste)
   new bootstrap.Modal('#editCard').show();
 }
 
-editCard(1)
+function recebe () {
+  let teste = document.querySelector('#message-text').value;
+  let teste1 = document.querySelector('.editObs');
+  let valor = teste.value;
+  console.log(teste);
+}
