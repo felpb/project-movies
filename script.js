@@ -18,7 +18,7 @@ moviesList.map((card, posicao) => {
         <img src="${card.image}"  class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">${card.name}</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <p class="card-text">${card.description}</p>
           <a href="#" class="btn btn-primary" onclick="openCard(${posicao})">Abrir</a>
           <a href="#" class="btn btn-primary" onclick="editCard(${posicao})">Editar</a>
           <a href="#" class="btn btn-primary">Deletar</a>
@@ -45,9 +45,13 @@ function editCard(posicao) {
   new bootstrap.Modal('#editCard').show();
 }
 
-function recebe () {
-  let teste = document.querySelector('#message-text').value;
-  let teste1 = document.querySelector('.editObs');
-  let valor = teste.value;
-  console.log(teste);
+function recebe (posicao) {
+  let editTitle = document.querySelector('#editTitle').value;
+  let editObs = document.querySelector('#editObs').value;
+
+  console.log(moviesList[1].name = editTitle);
+
+  var modal = document.getElementById("editCard");
+  var bootstrapModal = bootstrap.Modal.getInstance(modal);
+  bootstrapModal.hide();
 }
