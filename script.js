@@ -49,7 +49,7 @@ function editCard(posicao) {
   
 }
 
-function recebe () {
+function recebe (posicaoArray) {
   let editTitle = document.querySelector('#editTitle').value;
   let editObs = document.querySelector('#editObs').value;
 
@@ -59,11 +59,10 @@ function recebe () {
 
   moviesList.map((card, posicao) => {
     let movies = document.querySelector("#cards");
-    console.log(movies)
-    card.name = editTitle;
-    card.description = editObs;
-    movies.innerHTML = "";
-    movies.innerHTML += `
+
+    moviesList[posicaoArray].name = editTitle;
+    moviesList[posicaoArray].description = editObs;
+    movies.innerHTML = `
       <div class="col-md-4">
         <div class="card m-2">
           <img src="${card.image}"  class="card-img-top" alt="...">
