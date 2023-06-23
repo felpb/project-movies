@@ -3,7 +3,7 @@ let moviesList = [{"id":1,
   "image":"test",
   "description":"test"},
   {
-  "id":12,
+  "id":2,
   "name":"test2",
   "image":"test2",
   "description":"test2"
@@ -39,19 +39,43 @@ function openCard(posicao) {
 }
 
 function editCard(posicao) {
+  
   let selectCard = moviesList[posicao];
+  
+  let editedTitle = document.querySelector('#editTitle').value;
 
-  let teste = document.querySelector('#editTitle')
   new bootstrap.Modal('#editCard').show();
+
+  
 }
 
-function recebe (posicao) {
+function recebe () {
   let editTitle = document.querySelector('#editTitle').value;
   let editObs = document.querySelector('#editObs').value;
 
-  console.log(moviesList[1].name = editTitle);
-
-  var modal = document.getElementById("editCard");
-  var bootstrapModal = bootstrap.Modal.getInstance(modal);
+  let modal = document.getElementById("editCard");
+  let bootstrapModal = bootstrap.Modal.getInstance(modal);
   bootstrapModal.hide();
+
+  moviesList.map((card, posicao) => {
+    let movies = document.querySelector("#cards");
+    console.log(movies)
+    card.name = editTitle;
+    card.description = editObs;
+    movies.innerHTML = "";
+    movies.innerHTML += `
+      <div class="col-md-4">
+        <div class="card m-2">
+          <img src="${card.image}"  class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">${card.name}</h5>
+            <p class="card-text">${card.description}</p>
+            <a href="#" class="btn btn-primary" onclick="openCard(${posicao})">Abrir</a>
+            <a href="#" class="btn btn-primary" onclick="editCard(${posicao})">Editar</a>
+            <a href="#" class="btn btn-primary">Deletar</a>
+          </div>
+        </div>
+      </div>
+    `;
+  });
 }
