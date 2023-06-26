@@ -21,7 +21,7 @@ function writeCard () {
             <h5 class="card-title">${card.name}</h5>
             <p class="card-text">${card.description}</p>
             <a href="#" class="btn btn-primary" onclick="openCard(${posicao})">Abrir</a>
-            <a href="#" class="btn btn-primary" onclick="editCard(${posicao})">Editar</a>
+            <a href="#" class="btn btn-primary" onclick="openEditCard(${posicao})">Editar</a>
             <a href="#" class="btn btn-primary">Deletar</a>
           </div>
         </div>
@@ -31,6 +31,7 @@ function writeCard () {
 }
 
 writeCard();
+
 function openCard(posicao) {
   let selectCard = moviesList[posicao];
   
@@ -41,11 +42,18 @@ function openCard(posicao) {
   new bootstrap.Modal('#openCard').show();
 }
 
-function editCard(posicao) {
-  
-  let selectCard = moviesList[posicao];
-  let editedTitle = document.querySelector('#editTitle').value;
+
+function openEditCard(posicao) {
   new bootstrap.Modal('#editCard').show();
 
-  
+  moviesList[posicao] = {};
+  console.log(moviesList)
+  let movies = document.querySelector('#cards');
+  movies.innerHTML = '';
+}
+
+function saveEditCard() {
+
+
+  writeCard();
 }
