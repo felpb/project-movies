@@ -10,6 +10,8 @@ let moviesList = [{"id":1,
 },
 ];
 
+let currentCardPosition = null;
+
 function writeCard () {
   moviesList.map((card, posicao) => {
     let movies = document.querySelector("#cards");
@@ -44,16 +46,24 @@ function openCard(posicao) {
 
 
 function openEditCard(posicao) {
+  currentCardPosition = posicao;
+
   new bootstrap.Modal('#editCard').show();
 
-  moviesList[posicao] = {};
-  console.log(moviesList)
   let movies = document.querySelector('#cards');
   movies.innerHTML = '';
+
 }
 
 function saveEditCard() {
 
+  let editedTitle = document.querySelector('#editTitle').value;
+  moviesList[currentCardPosition].name = editedTitle;
+  let editedObs = document.querySelector('#editObs').value;
+  moviesList[currentCardPosition].description = editedObs;
 
-  writeCard();
+  writeCard()
+  let modal = document.getElementById("editCard");
+  let bootstrapModal = bootstrap.Modal.getInstance(modal);
+  bootstrapModal.hide();
 }
