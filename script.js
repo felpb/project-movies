@@ -12,8 +12,8 @@ let moviesList = [{"id":1,
 
 let currentCardPosition = null;
 
-function writeCard () {
-  moviesList.map((card, posicao) => {
+function renderCard () {
+  moviesList.map((card, position) => {
     let movies = document.querySelector("#cards");
     movies.innerHTML += `
       <div class="col-md-4">
@@ -22,8 +22,8 @@ function writeCard () {
           <div class="card-body">
             <h5 class="card-title">${card.name}</h5>
             <p class="card-text">${card.description}</p>
-            <a href="#" class="btn btn-primary" onclick="openCard(${posicao})">Abrir</a>
-            <a href="#" class="btn btn-primary" onclick="openEditCard(${posicao})">Editar</a>
+            <a href="#" class="btn btn-primary" onclick="openCard(${position})">Abrir</a>
+            <a href="#" class="btn btn-primary" onclick="openEditCard(${position})">Editar</a>
             <a href="#" class="btn btn-primary">Deletar</a>
           </div>
         </div>
@@ -32,10 +32,10 @@ function writeCard () {
   });
 }
 
-writeCard();
+renderCard();
 
-function openCard(posicao) {
-  let selectCard = moviesList[posicao];
+function openCard(position) {
+  let selectCard = moviesList[position];
   
   document.querySelector('#titleModal').innerHTML = selectCard.name;
   document.querySelector('#imgModal').src = selectCard.image;
@@ -45,8 +45,8 @@ function openCard(posicao) {
 }
 
 
-function openEditCard(posicao) {
-  currentCardPosition = posicao;
+function openEditCard(position) {
+  currentCardPosition = position;
 
   new bootstrap.Modal('#editCard').show();
 
@@ -62,7 +62,7 @@ function saveEditCard() {
   let editedObs = document.querySelector('#editObs').value;
   moviesList[currentCardPosition].description = editedObs;
 
-  writeCard()
+  renderCard();
   let modal = document.getElementById("editCard");
   let bootstrapModal = bootstrap.Modal.getInstance(modal);
   bootstrapModal.hide();
