@@ -24,7 +24,7 @@ function renderCard () {
             <p class="card-text">${card.description}</p>
             <a href="#" class="btn btn-primary" onclick="openCard(${position})">Abrir</a>
             <a href="#" class="btn btn-primary" onclick="openEditCard(${position})">Editar</a>
-            <a href="#" class="btn btn-primary">Deletar</a>
+            <a href="#" class="btn btn-primary" onclick="deleteCard(${position})">Deletar</a>
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@ function validationValue (value) {
     let modal = document.getElementById("editCard");
     let bootstrapModal = bootstrap.Modal.getInstance(modal);
     bootstrapModal.hide();
-    new bootstrap.Modal('#myModal').show();
+    new bootstrap.Modal('#modalEditError').show();
     return false;
   } else {
     return true;
@@ -83,7 +83,7 @@ function saveEditCard() {
   let editedObs = document.querySelector('#editObs').value;
   moviesList[currentCardPosition].description = editedObs;
 
-  if (validationValue(editedTitle) === true && validationValue(editedObs)) {
+  if (validationValue(editedTitle) === true && validationValue(editedObs) === true) {
     
     let movies = document.querySelector('#cards');
     movies.innerHTML = '';
@@ -96,3 +96,6 @@ function saveEditCard() {
 
 }
 
+function deleteCard () {
+  new bootstrap.Modal('#myModal').show();
+}
