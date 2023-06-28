@@ -33,6 +33,11 @@ function renderCard () {
   });
 }
 
+function clearCard () {
+  let movies = document.querySelector('#cards');
+  movies.innerHTML = '';
+}
+
 renderCard();
 
 function openCard(position) {
@@ -86,9 +91,7 @@ function saveEditCard() {
 
   if (validationValue(editedTitle) === true && validationValue(editedObs) === true) {
     
-    let movies = document.querySelector('#cards');
-    movies.innerHTML = '';
-
+    clearCard();
     renderCard();
     let modal = document.getElementById("editCard");
     let bootstrapModal = bootstrap.Modal.getInstance(modal);
@@ -110,8 +113,7 @@ function deleteCard () {
   }
   console.log(moviesList)
 
-  let movies = document.querySelector('#cards');
-  movies.innerHTML = '';
+  clearCard();
   renderCard();
 
   let modal = document.getElementById("modalDeleteCard");
