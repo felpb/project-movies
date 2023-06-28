@@ -11,6 +11,7 @@ let moviesList = [{"id":1,
 ];
 
 let currentCardPosition = null;
+let currentCardDeletePosition = null;
 
 function renderCard () {
   moviesList.map((card, position) => {
@@ -24,7 +25,7 @@ function renderCard () {
             <p class="card-text">${card.description}</p>
             <a href="#" class="btn btn-primary" onclick="openCard(${position})">Abrir</a>
             <a href="#" class="btn btn-primary" onclick="openEditCard(${position})">Editar</a>
-            <a href="#" class="btn btn-primary" onclick="deleteCard(${position})">Deletar</a>
+            <a href="#" class="btn btn-primary" onclick="openDeleteCard(${position})">Deletar</a>
           </div>
         </div>
       </div>
@@ -96,6 +97,24 @@ function saveEditCard() {
 
 }
 
+function openDeleteCard (position) {
+  currentCardDeletePosition = position;
+  new bootstrap.Modal('#modalDeleteCard').show();
+}
+
 function deleteCard () {
-  new bootstrap.Modal('#myModal').show();
+  let indexToRemove = currentCardDeletePosition;
+
+  if (indexToRemove !== -1) {
+    moviesList.splice(indexToRemove, 1);
+  }
+  console.log(moviesList)
+
+  let movies = document.querySelector('#cards');
+  movies.innerHTML = '';
+  renderCard();
+
+  let modal = document.getElementById("modalDeleteCard");
+  let bootstrapModal = bootstrap.Modal.getInstance(modal);
+  bootstrapModal.hide();
 }
