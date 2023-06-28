@@ -62,7 +62,7 @@ function validationValue (value) {
   let validate = value.trim();
 
   if (validate.length < 3) {
-    alert("ESCREVA MAIS")
+    new bootstrap.Modal('#myModal').show();
     return false;
   } else {
     return true;
@@ -70,8 +70,6 @@ function validationValue (value) {
 }
 
 function saveEditCard() {
-
-
 
   let editedTitle = document.querySelector('#editTitle').value;
   moviesList[currentCardPosition].name = editedTitle;
