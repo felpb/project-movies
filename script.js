@@ -47,15 +47,19 @@ function openCard(position) {
 
 function openEditCard(position) {
   currentCardPosition = position;
+  let clearValueTitle = document.querySelector('#editTitle');
+  clearValueTitle.value = '';
+  let clearValueObs = document.querySelector('#editObs');
+  clearValueObs.value = '';
 
   new bootstrap.Modal('#editCard').show();
-
-  let movies = document.querySelector('#cards');
-  movies.innerHTML = '';
 
 }
 
 function saveEditCard() {
+
+  let movies = document.querySelector('#cards');
+  movies.innerHTML = '';
 
   let editedTitle = document.querySelector('#editTitle').value;
   moviesList[currentCardPosition].name = editedTitle;
