@@ -47,6 +47,7 @@ function openCard(position) {
 
 function openEditCard(position) {
   currentCardPosition = position;
+
   let clearValueTitle = document.querySelector('#editTitle');
   clearValueTitle.value = '';
   let clearValueObs = document.querySelector('#editObs');
@@ -56,18 +57,37 @@ function openEditCard(position) {
 
 }
 
+function validationValue (value) {
+
+  let validate = value.trim();
+
+  if (validate.length < 3) {
+    alert("ESCREVA MAIS")
+    return false;
+  } else {
+    return true;
+  }
+}
+
 function saveEditCard() {
 
-  let movies = document.querySelector('#cards');
-  movies.innerHTML = '';
+
 
   let editedTitle = document.querySelector('#editTitle').value;
   moviesList[currentCardPosition].name = editedTitle;
   let editedObs = document.querySelector('#editObs').value;
   moviesList[currentCardPosition].description = editedObs;
 
-  renderCard();
-  let modal = document.getElementById("editCard");
-  let bootstrapModal = bootstrap.Modal.getInstance(modal);
-  bootstrapModal.hide();
+  if (validationValue(editedTitle) === true && validationValue(editedObs)) {
+    
+    let movies = document.querySelector('#cards');
+    movies.innerHTML = '';
+
+    renderCard();
+    let modal = document.getElementById("editCard");
+    let bootstrapModal = bootstrap.Modal.getInstance(modal);
+    bootstrapModal.hide();
+  }
+
 }
+
