@@ -57,11 +57,18 @@ function openEditCard(position) {
 
 }
 
+function openCardAfterValidation () {
+  new bootstrap.Modal('#editCard').show();
+}
+
 function validationValue (value) {
 
   let validate = value.trim();
 
   if (validate.length < 3) {
+    let modal = document.getElementById("editCard");
+    let bootstrapModal = bootstrap.Modal.getInstance(modal);
+    bootstrapModal.hide();
     new bootstrap.Modal('#myModal').show();
     return false;
   } else {
