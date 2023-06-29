@@ -1,21 +1,17 @@
-let moviesList = [{"id":1,
-  "name":"test",
+let moviesList = [{"name":"test",
   "image":"test",
   "description":"test"},
   {
-  "id":2,
   "name":"test2",
   "image":"test2",
   "description":"test2"
 },
 {
-  "id":2,
   "name":"test3",
   "image":"test3",
   "description":"test3"
 },
 {
-  "id":4,
   "name":"test4",
   "image":"test4",
   "description":"test4"
@@ -149,8 +145,7 @@ function addCard () {
   let image = document.querySelector('#addImage').value;
   
   
-  let newCard = {'id': '',
-    'name': title,
+  let newCard = {'name': title,
     'image': image,
     'description': obs
   };
