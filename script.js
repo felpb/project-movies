@@ -31,7 +31,7 @@ function renderCard () {
     movies.innerHTML += `
       <div class="col-md-4">
         <div class="card m-2">
-          <img src=""  class="card-img-top" alt="...">
+          <img src="${card.image}"  class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">${card.name}</h5>
             <p class="card-text">${card.description}</p>
