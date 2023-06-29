@@ -136,3 +136,19 @@ function deleteCard () {
 function openAddCard () {
   new bootstrap.Modal('#addCard').show();
 }
+
+function addCard () {
+  let title = document.querySelector('#addTitle').value;
+  let obs = document.querySelector('#addObs').value;
+  let image = document.querySelector('#addImage').value;
+  
+  
+  let newCard = {'id': '',
+    'name': title,
+    'image': image,
+    'description': obs
+  };
+
+  moviesList.push(newCard);
+  console.log(moviesList)
+}
