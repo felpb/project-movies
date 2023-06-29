@@ -36,8 +36,8 @@ function renderCard () {
             <h5 class="card-title">${card.name}</h5>
             <p class="card-text">${card.description}</p>
             <a href="#" class="btn btn-primary" onclick="openCard(${position})">Abrir</a>
-            <a href="#" class="btn btn-primary" onclick="openEditCard(${position})">Editar</a>
-            <a href="#" class="btn btn-primary" onclick="openDeleteCard(${position})">Deletar</a>
+            <a href="#" class="btn btn-secondary" onclick="openEditCard(${position})">Editar</a>
+            <a href="#" class="btn btn-danger" onclick="openDeleteCard(${position})">Deletar</a>
           </div>
         </div>
       </div>
