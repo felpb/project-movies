@@ -134,6 +134,12 @@ function deleteCard () {
 }
 
 function openAddCard () {
+
+  let clearValueTitle = document.querySelector('#addTitle');
+  clearValueTitle.value = '';
+  let clearValueObs = document.querySelector('#addObs');
+  clearValueObs.value = '';
+
   new bootstrap.Modal('#addCard').show();
 }
 
@@ -148,7 +154,12 @@ function addCard () {
     'image': image,
     'description': obs
   };
-
+  
   moviesList.push(newCard);
-  console.log(moviesList)
+
+  clearCard();
+  renderCard();
+  let modal = document.getElementById("addCard");
+  let bootstrapModal = bootstrap.Modal.getInstance(modal);
+  bootstrapModal.hide();
 }
