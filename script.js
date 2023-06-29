@@ -8,6 +8,18 @@ let moviesList = [{"id":1,
   "image":"test2",
   "description":"test2"
 },
+{
+  "id":2,
+  "name":"test3",
+  "image":"test3",
+  "description":"test3"
+},
+{
+  "id":4,
+  "name":"test4",
+  "image":"test4",
+  "description":"test4"
+},
 ];
 
 let currentCardPosition = null;
@@ -19,7 +31,7 @@ function renderCard () {
     movies.innerHTML += `
       <div class="col-md-4">
         <div class="card m-2">
-          <img src="${card.image}"  class="card-img-top" alt="...">
+          <img src=""  class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">${card.name}</h5>
             <p class="card-text">${card.description}</p>
