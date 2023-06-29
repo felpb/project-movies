@@ -132,3 +132,7 @@ function deleteCard () {
   let bootstrapModal = bootstrap.Modal.getInstance(modal);
   bootstrapModal.hide();
 }
+
+function openAddCard () {
+  new bootstrap.Modal('#addCard').show();
+}
