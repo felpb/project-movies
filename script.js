@@ -1,20 +1,20 @@
-let moviesList = [{"name":"test",
-  "image":"test",
-  "description":"test"},
+let moviesList = [{"name":"De Volta para o Futuro",
+  "image":"https://upload.wikimedia.org/wikipedia/pt/9/97/BackFuturePoster.jpg",
+  "description":"O adolescente Marty McFly é transportado para 1955 quando uma experiência do excêntrico cientista Doc Brown dá errado. Ele viaja pelo tempo em um carro modificado e acaba conhecendo seus pais ainda jovens."},
   {
-  "name":"test2",
-  "image":"test2",
-  "description":"test2"
+  "name":"Pulp Fiction: Tempo de Violência",
+  "image":"https://upload.wikimedia.org/wikipedia/pt/8/82/Pulp_Fiction_cover.jpg",
+  "description":"Assassino que trabalha para a máfia se apaixona pela esposa de seu chefe quando é convidado a acompanhá-la, um boxeador descumpre sua promessa de perder uma luta e um casal tenta um assalto que rapidamente sai do controle."
 },
 {
-  "name":"test3",
-  "image":"test3",
-  "description":"test3"
+  "name":"O Irlandês",
+  "image":"https://upload.wikimedia.org/wikipedia/pt/d/da/The_Irishman_p%C3%B4ster.png",
+  "description":"Na década de 1950, o caminhoneiro Frank Sheeran se envolve com Russell Bufalino e sua família criminosa. Enquanto Sheeran sobe na hierarquia para se tornar um assassino, ele também trabalha para Jimmy Hoffa, um homem poderoso do submundo.",
 },
 {
-  "name":"test4",
-  "image":"test4",
-  "description":"test4"
+  "name":"El Camino: A Breaking Bad Film",
+  "image":"https://upload.wikimedia.org/wikipedia/pt/4/48/El_Camino_p%C3%B4ster.png",
+  "description":"Assombrado pelo passado, o fugitivo Jesse Pinkman tenta encontrar um lugar seguro para viver.",
 },
 ];
 
