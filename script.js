@@ -21,16 +21,24 @@ let moviesList = [{"name":"De Volta para o Futuro",
 let currentCardPosition = null;
 let currentCardDeletePosition = null;
 
+function sliceString(str, limite) {
+  if (str.length > limite) {
+    return str.substring(0, limite) + "...";
+  }
+  return str;
+}
+
 function renderCard () {
   moviesList.map((card, position) => {
     let movies = document.querySelector("#cards");
+    let description = sliceString(card.description, 120)
     movies.innerHTML += `
       <div class="col-md-4">
-        <div class="card m-2">
-          <img src="${card.image}"  class="card-img-top" alt="...">
+        <div class="card" style="height: 500px;">
+          <img src="${card.image}"  class="card-img-top card-image m-0" alt="...">
           <div class="card-body">
             <h5 class="card-title">${card.name}</h5>
-            <p class="card-text">${card.description}</p>
+            <p class="card-text">${description}</p>
             <a href="#" class="btn btn-primary" onclick="openCard(${position})">Abrir</a>
             <a href="#" class="btn btn-secondary" onclick="openEditCard(${position})">Editar</a>
             <a href="#" class="btn btn-danger" onclick="openDeleteCard(${position})">Deletar</a>

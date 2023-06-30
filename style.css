@@ -83,3 +83,15 @@ body {
 	display: inline-block;
 	margin: 100px auto;
 }
+
+.card-image {
+  max-width: 100%;
+  max-height: 300px; 
+  display: block;
+  margin: auto;
+}
+
+.card-body {
+	max-width: 100%;
+  max-height: 100%; 
+}
