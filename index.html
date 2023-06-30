@@ -10,25 +10,27 @@
 </head>
 <body>
   
+  
   <h2 class="text-center">Movies</h2>
 
+  <!--Div para renderizar os cartões-->
   <div class="container text-center">
     <div id="cards" class="row">
 
     </div>
   </div>
 
-    <!-- Modal -->
+  <!--Modal para abrir o filme-->
   <div class="modal fade" id="openCard" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="titleModal">Modal title</h1>
+          <h1 class="modal-title fs-5" id="titleModal"></h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <img src="" class="card-img-top" alt="Imagem do card" id="imgModal">
-          <p id="obsModal">test</p>
+          <p id="obsModal"></p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -37,6 +39,7 @@
     </div>
   </div>
 
+  <!--Modal para editar o filme-->
   <div class="modal fade" id="editCard" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -63,6 +66,7 @@
     </div>
   </div>
 
+  <!--Modal de erro-->
   <div id="modalEditError" class="modal fade">
     <div class="modal-dialog modal-confirm">
       <div class="modal-content">
@@ -79,7 +83,7 @@
     </div>
   </div>   
   
-  <!-- Modal HTML -->
+  <!--Modal de confirmação-->
   <div id="modalDeleteCard" class="modal fade">
     <div class="modal-dialog modal-confirm">
       <div class="modal-content">
@@ -100,6 +104,7 @@
     </div>
   </div>
 
+  <!--Modal para adicionar filmes-->
   <div class="modal fade" id="addCard" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
