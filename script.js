@@ -71,9 +71,9 @@ function openEditCard(position) {
   currentCardPosition = position;
 
   let clearValueTitle = document.querySelector('#editTitle');
-  clearValueTitle.value = '';
+  clearValueTitle.value = moviesList[position].name;
   let clearValueObs = document.querySelector('#editObs');
-  clearValueObs.value = '';
+  clearValueObs.value = moviesList[position].description;
 
   new bootstrap.Modal('#editCard').show();
 
