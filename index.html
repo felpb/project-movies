@@ -21,7 +21,7 @@
   </div>
 
   <!--Modal para abrir o filme-->
-  <div class="modal fade" id="openCard" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="openCard" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -40,7 +40,7 @@
   </div>
 
   <!--Modal para editar o filme-->
-  <div class="modal fade" id="editCard" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="editCard" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -50,11 +50,11 @@
         <div class="modal-body">
           <form action="" id="modalForm">
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label">Alterar título:</label>
+              <label for="editTitle" class="col-form-label">Alterar título:</label>
               <input type="text" class="form-control" id="editTitle">
             </div>
             <div class="mb-3">
-              <label for="message-text" class="col-form-label">Alterar Descrição:</label>
+              <label for="editObs" class="col-form-label">Alterar Descrição:</label>
               <textarea class="form-control" id="editObs"></textarea>
             </div>
           </form>
@@ -105,25 +105,25 @@
   </div>
 
   <!--Modal para adicionar filmes-->
-  <div class="modal fade" id="addCard" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="addCard" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar filmes</h1>
+          <h1 class="modal-title fs-5">Adicionar filmes</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <form action="" id="modalForm">
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label">Título:</label>
+              <label for="addTitle" class="col-form-label">Título:</label>
               <input type="text" class="form-control" id="addTitle">
             </div>
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label">Descrição:</label>
+              <label for="addObs" class="col-form-label">Descrição:</label>
               <input type="text" class="form-control" id="addObs">
             </div>
             <div class="mb-3">
-              <label for="exampleFormControlFile1">Poster:</label> <br>
+              <label for="addImage">Poster:</label> <br>
               <textarea class="form-control" id="addImage"></textarea>
             </div>
           </form>
