@@ -33,11 +33,11 @@ function renderCard () {
     let movies = document.querySelector("#cards");
     let description = sliceString(card.description, 120)
     movies.innerHTML += `
-      <div class="col-md-4">
-        <div class="card" style="height: 500px;">
+      <div class="col-md-3" id="cardMovies">
+        <div class="card">
           <img src="${card.image}"  class="card-img-top card-image m-0" alt="...">
           <div class="card-body">
-            <h5 class="card-title">${card.name}</h5>
+            <p class="card-title">${card.name}</p>
             <p class="card-text">${description}</p>
             <a href="#" class="btn btn-primary" onclick="openCard(${position})">Abrir</a>
             <a href="#" class="btn btn-secondary" onclick="openEditCard(${position})">Editar</a>
