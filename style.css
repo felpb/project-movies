@@ -90,3 +90,7 @@ body {
   justify-content: space-between;
   height: 100%;
 }
+
+.cards {
+	padding-top: 18px;
+}

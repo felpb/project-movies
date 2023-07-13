@@ -33,7 +33,7 @@ function renderCard () {
     let movies = document.querySelector("#cards");
     let description = sliceString(card.description, 100)
     movies.innerHTML += `
-      <div class="col-md-3">
+      <div class="col-md-3 cards">
         <div class="card">
           <img src="${card.image}"  class="card-img-top card-image" alt="...">
           <div class="card-body">
