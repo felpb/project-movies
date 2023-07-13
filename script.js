@@ -31,11 +31,11 @@ function sliceString(str, limite) {
 function renderCard () {
   moviesList.map((card, position) => {
     let movies = document.querySelector("#cards");
-    let description = sliceString(card.description, 120)
+    let description = sliceString(card.description, 100)
     movies.innerHTML += `
-      <div class="col-md-3" id="cardMovies">
+      <div class="col-md-3">
         <div class="card">
-          <img src="${card.image}"  class="card-img-top card-image m-0" alt="...">
+          <img src="${card.image}"  class="card-img-top card-image" alt="...">
           <div class="card-body">
             <p class="card-title">${card.name}</p>
             <p class="card-text">${description}</p>
