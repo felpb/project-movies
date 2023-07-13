@@ -40,7 +40,7 @@ function renderCard () {
             <p class="card-title">${card.name}</p>
             <p class="card-text">${description}</p>
           </div>
-          <div>
+          <div id="div-buttons">
             <a href="#" class="btn btn-primary" onclick="openCard(${position})">Abrir</a>
             <a href="#" class="btn btn-secondary" onclick="openEditCard(${position})">Editar</a>
             <a href="#" class="btn btn-danger" onclick="openDeleteCard(${position})">Deletar</a>
